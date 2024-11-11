@@ -1,7 +1,5 @@
 //! ./afpack needs sudo privileges to run.
 
-// NOLINT clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

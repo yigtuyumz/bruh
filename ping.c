@@ -1,5 +1,3 @@
-// NOLINTBEGIN clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling
-
 // ping uses the ICMP protocols mandatory ECHO REQUEST datagram to elicit an
 // ICMP ECHO RESPONSE from a host or gateway. ECHO REQUEST datagrams (pings) have
 // an IP and ICMP header, followed by a struct timeval and then an arbitrary
@@ -66,7 +64,6 @@ main(int argc, char *argv[])
     icmp->checksum = 0;
     icmp->checksum = checksum((unsigned short *) icmp, len);
 
-    while (1) {
     /* send the packet */
     sendto(sockfd, buffer, len, 0, res->ai_addr, res->ai_addrlen);
 
@@ -83,6 +80,7 @@ main(int argc, char *argv[])
     ip = (struct iphdr *) buffer;
     ip_len = ip->ihl << 2;
     icmp = (struct icmphdr *) (ip_len + buffer);
+
     if (icmp->type == ICMP_ECHOREPLY) {
         printf("Alive. %s\n", argv[1]);
     } else {
@@ -90,7 +88,6 @@ main(int argc, char *argv[])
     }
 
     printf("message recieved from %s\n", inet_ntoa(raddr.sin_addr));
-    }
 
     close(sockfd);
 
@@ -125,6 +122,3 @@ checksum(unsigned short *addr, int len)
 
     return (answer);
 }
-
-
-// NOLINTEND clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling
