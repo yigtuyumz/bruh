@@ -1,8 +1,8 @@
 # bruh
 
-![bruh](bruh.gif)
-<br>
-![Manjaro](Manjaro.svg)
+![Manjaro](Manjaro.svg?raw=true)
+![bruh](bruh.gif?raw=true)
+![Manjaro](Manjaro.svg?raw=true)
 
 ```sh
     `cat /proc/version`
