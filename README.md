@@ -2,7 +2,7 @@
 
 ![bruh](bruh.gif)
 <br>
-![Manjaro](Manjaro.svg =50x50)
+![Manjaro](Manjaro.svg)
 
 ```sh
     `cat /proc/version`
